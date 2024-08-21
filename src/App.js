@@ -4,11 +4,11 @@ import About from './custom_components/About';
 import Navbar from './custom_components/Navbar';
 import TextForm from './custom_components/TextForm';
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 
 
 
@@ -67,19 +67,16 @@ function App() {
   return (
    <>
 
-    <Router>
+    {/* <Router> */}
       <Navbar title="TextUtils" mode={ mode } toggle={ toggleMode } />
       <Alert alert = {alert} />
-      
-      <Routes>
-
+      <TextForm mode={mode} alert={showAlert} />
+      {/* <Routes>
         <Route path="/about" element={<About/>} />
-        
         <Route path="/" element={<TextForm mode={mode} alert={showAlert} />}/>
+      </Routes> */}
 
-      </Routes>
-
-    </Router>
+    {/* </Router> */}
    </>
   );
 }
