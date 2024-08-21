@@ -1,6 +1,6 @@
 import './App.css';
 import Alert from './custom_components/Alert';
-import About from './custom_components/About';
+// import About from './custom_components/About';
 import Navbar from './custom_components/Navbar';
 import TextForm from './custom_components/TextForm';
 import React, { useState } from 'react';
