@@ -60,8 +60,7 @@ export default function TextForm(props) {
         else{
             let num = 1 ;
             for(let i=0 ; i <= text.length ; i++){
-                if( ( text.charAt(i) === ' ' || text.charAt(i) === '\n' ) && 
-                text.charAt(i+1) !== ' '){
+                if( (text.charAt(i) === ' ' || text.charAt(i) === '\n') && text.charAt(i+1) !== ' '){
                     num++
                 }
             }
