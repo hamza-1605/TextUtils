@@ -79,7 +79,7 @@ export default function TextForm(props) {
 
     const btnTextStyle = () => {
         if( props.mode === 'white'){
-            return { color: 'black' , backgroundColor : props.mode } ;
+            return { color: 'white' , backgroundColor : 'black' } ;
         }
         else{
             return { color: 'white' , backgroundColor : props.mode } ;
