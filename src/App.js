@@ -35,7 +35,7 @@ function App() {
 
     switch(theme){
       case 'white':
-        document.body.style.backgroundColor = 'beige' ; 
+        document.body.style.backgroundColor = 'white' ; 
         showAlert("Light Mode has been enabled", "success");
         document.title = 'TextUtils - Light Mode' ;
         break;
