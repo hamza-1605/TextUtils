@@ -91,6 +91,9 @@ export default function TextForm(props) {
         if(window.getComputedStyle(document.body).backgroundColor === 'rgb(245, 245, 220)' || window.getComputedStyle(document.body).backgroundColor === 'rgb(255, 192, 203)'){
             return {color: 'black' , backgroundColor: window.getComputedStyle(document.body).backgroundColor , border: '1px solid #b2b2b7'} 
         }
+        else if(window.getComputedStyle(document.body).backgroundColor === 'rgb(255, 255, 255)' ){
+            return {color: 'black' , backgroundColor: 'rgb(254,254,254)' , border: '1px solid #b2b2b7'} 
+        }
         else{
             return {color: 'white' , backgroundColor: window.getComputedStyle(document.body).backgroundColor }
         }
