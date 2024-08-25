@@ -70,7 +70,11 @@ function App() {
     {/* <Router> */}
       <Navbar title="TextUtils" mode={ mode } toggle={ toggleMode } />
       <Alert alert = {alert} />
+<<<<<<< HEAD
       <TextForm mode={mode} alert={showAlert} heading={'Try Textutils - Word Counter, Character counter, Uppercase to Lowercase, Lowercase to Uppercase, Extra Space Remover'} />
+=======
+      <TextForm mode={mode} alert={showAlert} heading={'Try MY Textutils - Word Counter, Character counter, Uppercase to Lowercase, Lowercase to Uppercase, Extra Space Remover'} />
+>>>>>>> a7105a81bc92301a631460c80bc5295f879f88f4
       {/* <Routes>
         <Route path="/about" element={<About/>} />
         <Route path="/" element={<TextForm mode={mode} alert={showAlert} />}/>
