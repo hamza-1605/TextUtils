@@ -1,6 +1,6 @@
 {
-  "homepage": "https://hamza-1605.github.io/hamza-app",
-  "name": "hamza-app",
+  "homepage": "https://hamza-1605.github.io/TextUtils",
+  "name": "textutils",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

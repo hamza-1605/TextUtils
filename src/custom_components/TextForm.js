@@ -33,6 +33,7 @@ export default function TextForm(props) {
     
     const copyToClipboard = () => {
         navigator.clipboard.writeText(text);
+        document.getSelection().removeAllRanges();
         props.alert("Text Copied to Clipboard", "success")
     }
 
@@ -59,7 +60,8 @@ export default function TextForm(props) {
         else{
             let num = 1 ;
             for(let i=0 ; i <= text.length ; i++){
-                if( text.charAt(i) === ' ' && text.charAt(i+1) !== ' '){
+                if( ( text.charAt(i) === ' ' || text.charAt(i) === '\n' ) && 
+                text.charAt(i+1) !== ' '){
                     num++
                 }
             }
@@ -78,7 +80,7 @@ export default function TextForm(props) {
 
     const btnTextStyle = () => {
         if( props.mode === 'white'){
-            return { color: 'black' , backgroundColor : props.mode } ;
+            return { color: 'white' , backgroundColor : 'black' } ;
         }
         else{
             return { color: 'white' , backgroundColor : props.mode } ;
@@ -89,6 +91,9 @@ export default function TextForm(props) {
 
         if(window.getComputedStyle(document.body).backgroundColor === 'rgb(245, 245, 220)' || window.getComputedStyle(document.body).backgroundColor === 'rgb(255, 192, 203)'){
             return {color: 'black' , backgroundColor: window.getComputedStyle(document.body).backgroundColor , border: '1px solid #b2b2b7'} 
+        }
+        else if(window.getComputedStyle(document.body).backgroundColor === 'rgb(255, 255, 255)'){
+            return {color: 'black' , backgroundColor: 'rgb(254,254,254)' , border: '1px solid #b2b2b7'} 
         }
         else{
             return {color: 'white' , backgroundColor: window.getComputedStyle(document.body).backgroundColor }
@@ -103,17 +108,17 @@ export default function TextForm(props) {
     return (
         <>
         <div className={`container my-3 text`} style={ divTextStyle() }>
-            <h1>Enter your text below:</h1>
+            <h1>{props.heading}</h1>
             <form name='form'>
                 <div className="form-group">
                     <textarea className="form-control" onChange={changingFunc} id="textBox" rows="5" value={text} placeholder='Your text goes here' style={ formStyle() }></textarea>
                 </div>
             </form>
-            <button className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToUppercase}>Convert to Uppercase</button>
-            <button className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToLowercase}>Convert to Lowercase</button>
-            <button className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToEmpty}>Clear Text</button>
-            <button className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={copyToClipboard}>Copy Text</button>
-            <button className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled={text.length===0} className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToUppercase}>Convert to Uppercase</button>
+            <button disabled={text.length===0} className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToLowercase}>Convert to Lowercase</button>
+            <button disabled={text.length===0} className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={changeToEmpty}>Clear Text</button>
+            <button disabled={text.length===0} className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={copyToClipboard}>Copy Text</button>
+            <button disabled={text.length===0} className="btn btn mx-2 my-2" style={ btnTextStyle() } onClick={removeExtraSpaces}>Remove Extra Spaces</button>
         </div>
         <div className={`container my-3 text`} style={ divTextStyle() }>
             <h2>Text Summary</h2>
