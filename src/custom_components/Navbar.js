@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
 
-    const texti = document.getElementsByClassName('texti');
     
     const whiteTextColor = () => {
+        const texti = document.getElementsByClassName('texti');
         for (let i = 0 ; i < texti.length; i++) {
             texti[i].style.color = 'white' ;
         }
     }
     const blackTextColor = () => {
+        const texti = document.getElementsByClassName('texti');
         for (let i = 0 ; i < texti.length; i++) {
             texti[i].style.color = 'black' ;
         }
